@@ -47,6 +47,7 @@ jobs:
             --document-name "AWS-RunShellScript" \
             --comment "Automated deployment from GitHub Actions run ${{ github.run_id }}" \
             --parameters 'commands=[
+              "export PATH=$PATH:/usr/bin:/usr/local/bin",
               "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cs6620-app:latest",
               "docker stop cs6620-app || true",
               "docker rm cs6620-app || true",
